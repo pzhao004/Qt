@@ -1,3 +1,6 @@
 # Qt
 Qt demo
-this is demo for qt delegate and scrollbar useage
+1. For qtdelegate repository
+   this is demo for qt delegate and scrollbar useage
+
+2. For 
