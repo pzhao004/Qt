@@ -7,3 +7,6 @@ Qt demo
 2. For qtdelegate2 project
 
    this a second method to implement the self-define scrollbar.
+   
+3. For modifyTsBaseExcel
+   according the excel file to modify the ts file
