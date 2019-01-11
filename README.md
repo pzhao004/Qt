@@ -10,3 +10,7 @@ Qt demo
    
 3. For modifyTsBaseExcel
    according the excel file to modify the ts file
+   
+4. For lineChart
+   
+   line chart with canvas+js
