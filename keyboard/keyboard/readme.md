@@ -1,0 +1,1 @@
+# configurations of virtual keyboard.
