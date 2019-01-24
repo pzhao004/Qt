@@ -1,0 +1,54 @@
+<keyboard id="cry" resolution="20" spacing="4" row="5">
+    <!-- row 1 -->
+    <key span="2" seq="Аа">А</key>
+    <key span="2" seq="Бб">Б</key>
+    <key span="2" seq="Вв">В</key>
+    <key span="2" seq="Гг">Г</key>
+    <key span="2" seq="Дд">Д</key>
+    <key span="2" seq="Ее">Е</key>
+    <key span="2" seq="Ёё">Ё</key>
+    <key span="2" seq="Жж">Ж</key>
+    <key span="2" seq="Зз">З</key>
+    <key span="2" seq="Ии">И</key>
+
+    <!-- row 2 -->
+    <key span="2" seq="Йй">Й</key>
+    <key span="2" seq="Кк">К</key>
+    <key span="2" seq="Лл">Л</key>
+    <key span="2" seq="Мм">М</key>
+    <key span="2" seq="Нн">Н</key>
+    <key span="2" seq="Оо">О</key>
+    <key span="2" seq="Пп">П</key>
+    <key span="2" seq="Рр">Р</key>
+    <key span="2" seq="Сс">С</key>
+    <key span="2" seq="Тт">Т</key>
+
+    <!-- row 3 -->
+    <key span="2" seq="Уу">У</key>
+    <key span="2" seq="Фф">Ф</key>
+    <key span="2" seq="Хх">Х</key>
+    <key span="2" seq="Цц">Ц</key>
+    <key span="2" seq="Чч">Ч</key>
+    <key span="2" seq="Шш">Ш</key>
+    <key span="2" seq="Щщ">Щ</key>
+    <key span="2" seq="Ъъ">Ъ</key>
+    <key span="2" seq="Ыы">Ы</key>
+    <key span="2" seq="Ьь">Ь</key>
+    
+    <!-- row 4 -->
+    <key span="3" func="Shift">Shift</key>
+    <key span="2" seq="Ээ">Э</key>
+    <key span="2" seq="Юю">Ю</key>
+    <key span="2" seq="Яя">Я</key>
+    <key span="2" seq="Іі">І</key>
+    <key span="2" seq="Її">Ї</key>
+    <key span="2" seq="Єє">Є</key>
+    <key span="2" seq="Ўў">Ў</key>
+    <key span="3" func="Backspace" icon="ic_backspace.png"></key>
+	
+    <!-- row 5 -->
+    <key span="3" func="Mode"></key>
+    <key span="12">Space</key>
+    <key span="2">.</key>
+    <key span="3" func="OK" color="green">OK</key>
+</keyboard>

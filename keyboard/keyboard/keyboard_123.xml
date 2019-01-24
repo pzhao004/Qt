@@ -1,0 +1,47 @@
+<keyboard id="123" resolution="20" spacing="4" row="4">
+    <!-- row 1 -->
+    <key span="2">1</key>
+    <key span="2">2</key>
+    <key span="2">3</key>
+    <key span="2">4</key>
+    <key span="2">5</key>
+    <key span="2">6</key>
+    <key span="2">7</key>
+    <key span="2">8</key>
+    <key span="2">9</key>
+    <key span="2">0</key>
+
+    <!-- row 2 -->
+    <!-- empty key -->
+    <key span="1"></key>
+    <key span="2">-</key>
+    <key span="2" seq="/٪">/</key>
+    <key span="2">:</key>
+    <key span="2" seq=";؛">;</key>
+    <key span="2">(</key>
+    <key span="2">)</key>
+    <key span="2" seq="$€¥£©®¢">$</key>
+    <!-- pound -->
+    <key span="2">&amp;</key>
+    <key span="2">@</key>
+    <!-- empty key -->
+    <key span="1"></key>
+
+    <!-- row 3 -->
+    <key span="3" func="Shift">Shift</key>
+    <key span="2" seq=",٬">,</key>
+    <key span="2" seq="?؟">?</key>
+    <key span="2" seq="!¡">!</key>
+    <key span="2">&apos;</key>
+    <key span="2">&quot;</key>
+    <key span="2">#</key>
+    <key span="2">+</key>
+    <key span="3" func="Backspace" icon="ic_backspace.png">Backspace</key>
+    
+    <!-- row 4 -->
+    <key span="3" func="Mode"></key>
+    <key span="10">Space</key>
+    <key span="2">.</key>
+    <key span="3" func="OK" color="green" >OK</key>
+    <key span="2" func="Min" icon="ic_del_normal.png"></key>
+</keyboard>

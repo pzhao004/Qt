@@ -1,0 +1,51 @@
+<keyboard id="turkish" resolution="24" spacing="4" row="4">
+    <!-- row 1 -->
+    <key span="2">Q</key>
+    <key span="2">W</key> 
+    <key span="2" seq="EÈÉÊËÐ€">E</key>
+    <key span="2">R</key>
+    <key span="2" seq="TÞ">T</key>
+    <key span="2" seq="YÝ">Y</key>
+    <key span="2" seq="UÙÚÛÜ">U</key>
+    <key span="2" seq="IÌÍÎÏ">I</key>
+    <key span="2" seq="OÒÓÔÕÖØ">O</key>
+    <key span="2">P</key>
+	<key span="2">Ğ</key>
+	<key span="2">Û</key>
+
+    <!-- row 2 -->
+    <!-- empty key -->
+    <key span="1"></key>
+    <key span="2" seq="AÀÁÂÃÄÅÆ">A</key>
+    <key span="2" seq="Sß">S</key>
+    <key span="2">D</key>
+    <key span="2">F</key>
+    <key span="2">G</key>
+    <key span="2">H</key>
+    <key span="2">J</key>
+    <key span="2">K</key>
+    <key span="2">L</key>
+	<key span="2">Ş</key>
+    <key span="2">İ</key>
+    <!-- empty key -->
+    <key span="1"></key>
+
+    <!-- row 3 -->
+    <key span="3" func="Shift">Shift</key>
+    <key span="2">Z</key>
+    <key span="2">X</key>
+    <key span="2" seq="CÇ">C</key>
+    <key span="2">V</key>
+    <key span="2">B</key>
+    <key span="2" seq="NÑ">N</key>
+    <key span="2">M</key>
+	<key span="2">Ü</key>
+    <key span="2">Ç</key>
+    <key span="3" func="Backspace" icon="ic_backspace.png">Backspace</key>
+    
+    <!-- row 4 -->
+    <key span="3" func="Mode"></key>
+    <key span="16">Space</key>
+    <key span="2">‎₺</key>
+    <key span="3" func="OK" color="green">OK</key>
+</keyboard>
