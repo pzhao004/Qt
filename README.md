@@ -14,3 +14,7 @@ Qt demo
 4. For lineChart
    
    line chart with canvas+js
+
+5. For keyboard
+
+   virtual keyboard with qml+qt c++
