@@ -1,0 +1,75 @@
+<keyboard id="arabic" resolution="20" spacing="4" row="5">
+    <!-- row 1 -->
+    <key span="2">١</key>
+    <key span="2">٢</key>
+    <key span="2">٣</key>
+    <key span="2">٤</key>
+    <key span="2">٥</key>
+    <key span="2">٦</key>
+    <key span="2">٧</key>
+    <key span="2">٨</key>
+    <key span="2">٩</key>
+    <key span="2">٠</key>
+
+    <!-- row 2 -->
+    <key span="2" seq="ﺿﻀﺾﺽ">ﺿ</key>
+    <key span="2" seq="ﺻﺼﺺﺹ">ﺻ</key>
+    <key span="2" seq="ﺛﺜﺚﺙ">ﺛ</key>
+    <key span="2" seq="ﻗﻘﻖﻕ">ﻗ</key>
+    <key span="2" seq="ﻓﻔﻒﻑ">ﻓ</key>
+    <key span="2" seq="ﻏﻐﻎﻍ">ﻏ</key>
+    <key span="2" seq="ﻋﻌﻊﻉ">ﻋ</key>
+    <key span="2" seq="ﻫﻬﻪﻩ">ﻫ</key>
+    <key span="2" seq="ﺧﺨﺦﺥ">ﺧ</key>
+    <key span="2" seq="ﺣﺤﺢﺡ">ﺣ</key>
+
+    <!-- row 3 -->
+    <key span="2" seq="ﺷﺸﺶﺵ">ﺷ</key>
+    <key span="2" seq="ﺳﺴﺲﺱ">ﺳ</key>
+    <key span="2" seq="ﻳﻴﻲﻱ">ﻳ</key>
+    <key span="2" seq="ﺑﺒﺐﺏ">ﺑ</key>
+    <key span="2" seq="ﻟﻠﻞﻝ">ﻟ</key>
+    <key span="2" seq="ﺎﺍﺂﺁ">ﺎ</key>
+    <key span="2" seq="ﺗﺘﺖﺕ">ﺗ</key>
+    <key span="2" seq="ﻧﻨﻦﻥ">ﻧ</key>
+    <key span="2" seq="ﻣﻤﻢﻡ">ﻣ</key>
+    <key span="2" seq="ﻛﻜﻚﻙ">ﻛ</key>
+    
+    <!-- row 4 -->
+    <key span="2" seq="ﺋﺌﺊﺉ">ﺋ</key>
+    <key span="2">ء</key>
+    <key span="2" seq="ﺇﺈﺆﺅ">ﺇ</key>
+    <key span="2" seq="ﺮﺭ">ﺮ</key>
+    <key span="2" seq="ﻼﻻﻺﻹ">ﻼ</key>
+    <key span="2" seq="ﻰﻯ">ﻰ</key>
+    <key span="2" seq="ﺔﺓ">ﺔ</key>
+    <key span="2" seq="ﻮﻭ">ﻮ</key>
+    <key span="2" seq="ﺰﺯ">ﺰ</key>
+    <key span="2" seq="ﻇﻈﻆﻅ">ﻇ</key>
+	
+    <!-- row 5 -->
+    <key span="2" func="Mode"></key>
+    <key span="2" seq="ﺬﺫ">ﺬ</key>
+    <key span="2"></key>
+    <key span="2"></key>
+    <key span="2" seq="ﻸﻷﻶﻵ">ﻸ</key>
+    <key span="2" func="OK" color="green">OK</key>
+    <key span="2" func="Backspace" icon="ic_backspace.png"></key>
+    <key span="2" seq="ﺟﺠﺞﺝ">ﺟ</key>
+    <key span="2" seq="ﺪﺩ">ﺪ</key>
+    <key span="2" seq="ﻃﻄﻂﻁ">ﻃ</key>
+	
+    <!-- row 6 -->
+    <!--
+    <key span="2" func="Mode"></key>
+    <key span="2">٪</key>
+    <key span="2">٫</key>
+    <key span="2">٬</key>
+    <key span="2">٭</key>
+    <key span="2">؛</key>
+    <key span="2">؟</key>
+    <key span="2">ـ</key>
+    <key span="2">Space</key>
+    <key span="2" func="OK" color="green">OK</key>
+    -->
+</keyboard>
