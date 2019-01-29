@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>pix/bg_blue_normal.png</file>
+        <file>pix/bg_blue_press.png</file>
+        <file>pix/bg_button_normal.png</file>
+        <file>pix/bg_button_press.png</file>
+        <file>pix/bg_green_normal.png</file>
+        <file>pix/bg_green_press.png</file>
+        <file>pix/bg_grey_normal.png</file>
+        <file>pix/bg_grey_press.png</file>
+        <file>pix/ic_back.png</file>
+        <file>pix/ic_backspace.png</file>
+        <file>pix/ic_del_normal.png</file>
+        <file>pix/ic_fix.png</file>
+        <file>pix/ic_next.png</file>
+        <file>pix/ic_page_close.png</file>
+        <file>pix/ic_pinyin_prev.png</file>
+        <file>pix/ic_pinyin_prev_press.png</file>
+        <file>pix/ic_prev.png</file>
+        <file>SoftKeyboardLoder.qml</file>
+        <file>LayoutKeyboard.qml</file>
+        <file>keyboard/keyboard_123.xml</file>
+        <file>keyboard/keyboard_arabic.xml</file>
+        <file>keyboard/keyboard_cry.xml</file>
+        <file>keyboard/keyboard_latin.xml</file>
+        <file>keyboard/keyboard_turkish.xml</file>
+        <file>KeySelector.qml</file>
+        <file>pix/ic_button_normal.png</file>
+        <file>pix/button_normal_tmp.png</file>
+        <file>pix/button_pressed_tmp.png</file>
+        <file>Datashow.qml</file>
+        <file>pix/bg_intput_normal.png</file>
+        <file>pix/bg_intput_press.png</file>
+        <file>ScrollBar1.qml</file>
+        <file>ScrollBar2.qml</file>
+    </qresource>
+</RCC>
