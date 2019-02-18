@@ -18,3 +18,7 @@ Qt demo
 5. For keyboard
 
    virtual keyboard with qml+qt c++
+
+6. combobox/combobox2
+
+   self-defination combobox style.
