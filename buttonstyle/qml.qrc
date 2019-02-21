@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ButtonStyle1.qml</file>
+        <file>ButtonStyle2.qml</file>
+        <file>pic/placeholder_valuepanel_re.png</file>
+        <file>pic/placeholder_white.png</file>
+        <file>pic/popup-small_workaction_2_2_di.png</file>
+        <file>pic/popup-small_workaction_prim_re.png</file>
+        <file>pic/generic_listbg.png</file>
+    </qresource>
+</RCC>
