@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>language/en_US.ts</file>
+        <file>language/ja_JP.ts</file>
+        <file>language/zh_CN.ts</file>
+        <file>images/Controls_bg_disabled.png</file>
+        <file>images/Controls_bg_normal.png</file>
+        <file>images/Controls_bg_pressed.png</file>
+        <file>FileScan.qml</file>
+    </qresource>
+</RCC>
