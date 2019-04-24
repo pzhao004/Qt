@@ -1,5 +1,5 @@
 # Qt
-Qt demo
+Qt quick demo
 1. For qtdelegate project
 
    this is demo for qt delegate and scrollbar useage.
