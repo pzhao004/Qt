@@ -1,0 +1,2 @@
+main_screen_width: 800
+main_screen_height: 480
