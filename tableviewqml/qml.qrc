@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>configuration/configure.txt</file>
+        <file>images/bg_intput_normal.png</file>
+        <file>images/delete.png</file>
+        <file>images/generic_inputbar_52_re.png</file>
+        <file>Scrolbar.qml</file>
+    </qresource>
+</RCC>
