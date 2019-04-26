@@ -9,6 +9,7 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 1.4
 import SFPM 1.0
 Window {
+    property int rowNum: 0
     id:frmWindow
     visible: true
     maximumWidth: CONFIG.mainScreenWidth
@@ -39,7 +40,6 @@ Window {
         alternatingRowColors: false
         backgroundVisible: true
         horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
-        verticalScrollBarPolicy:Qt.ScrollBarAlwaysOff
         headerDelegate: Rectangle{
             width:610; height: 30; color: "#337733"; border.width: 1; border.color: "blue";
             Text{
@@ -48,14 +48,12 @@ Window {
                 horizontalAlignment: Text.AlignHCenter;verticalAlignment: Text.AlignVCenter
             }
         }
-        rowDelegate: Rectangle {
-                       height: 50
-                    }
+        rowDelegate: Rectangle {height: 50}
     }
-    Scrolbar{target: tableView}
+
     Component{
         id: imageicon
-        Rectangle{
+        Rectangle {
             height: 50;
             Image{
                 anchors.centerIn: parent
@@ -66,8 +64,8 @@ Window {
                 id:delArea
                 anchors.fill: parent
                 onClicked: {
-                    console.log("set del status...", styleData.column, styleData.row,styleData.value)
-                    TABLEMODEL.del(styleData.row);
+                    console.log("set del status...",  styleData.row, styleData.column,styleData.value)
+                    TABLEMODEL.del(styleData.value);
                 }
             }
         }
@@ -75,7 +73,7 @@ Window {
     Component{
         id:selectBox
         Rectangle {
-            height: 50; border.color: "green"; border.width: 1; // color: "transparent"
+            height: 50; border.color: "green"; border.width: 1;  color: "transparent"
             Image{
                 anchors.fill: parent
                 source: "./images/bg_intput_normal.png"
@@ -111,21 +109,13 @@ Window {
                     }
                 }
             }
-
-             onColorChanged: {
-                 if(styleData.selected){
-                     console.log("color changed: ", styleData.value)
-                     TABLEMODEL.collectData(styleData.value)
-                 }
-             }
         }
     }
-
 
     Row{
             anchors.bottom: parent.bottom;anchors.right: parent.right; spacing: 2
             height: 40
-            Rectangle{
+            Rectangle {
                 height: 30;width: 110;border.width: 1;border.color: "black"
                 TextField{
                     id:serachBox
@@ -153,12 +143,6 @@ Window {
                     TABLEMODEL.add(input1.text,input2.text,input3.text)
                 }
             }
-//            Button{
-//                text: qsTr("DelFilterResult")
-//                onClicked: {
-//                    TABLEMODEL.delSec();
-//                }
-//            }
             Button{
                 text: qsTr("DelAll")
                 onClicked: {

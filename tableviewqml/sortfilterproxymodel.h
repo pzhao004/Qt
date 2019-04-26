@@ -64,9 +64,6 @@ signals:
     void recordIndexChanged(int recordIndex, bool recordStatus) const;
     void filterStringChanged();
 
-public slots:
-    void handleRecordIndex(int rIndex);
-
 private:
     bool m_recordStatus;
     int    m_recordIndex;

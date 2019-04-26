@@ -31,11 +31,10 @@ public:
 
     void initialDatas();
     Q_INVOKABLE void add(QString str1, QString str2, QString str3);
-    Q_INVOKABLE void del(int row);
+    Q_INVOKABLE void del(QString row);
     Q_INVOKABLE void delall();
     Q_INVOKABLE void modify(int row, int column, QString txt);
     Q_INVOKABLE void refresh();
-    Q_INVOKABLE void delSec();
     Q_INVOKABLE void collectData(QString rowData);
 
 public slots:
@@ -47,6 +46,7 @@ private:
     QHash<int, QByteArray> m_roles;
     QVector<QString> m_rowData;
     QVector<int> m_indexList;
+    int m_count;
 };
 
 #endif // TABLEVIEWMODEL_H

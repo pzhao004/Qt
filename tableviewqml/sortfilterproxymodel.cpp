@@ -7,8 +7,6 @@ SortFilterProxyModel::SortFilterProxyModel(QObject *parent): QSortFilterProxyMod
     m_complete = false;
     flag=1;
     m_temp = "**";
-    //这里通过信号槽把收集到的数据传递tableviewmode ，然后出发delall的时候删除所有
-    //qDebug() <<"sourceModel: " << sourceModel();
 }
 QHash<int,QByteArray> SortFilterProxyModel::roleNames() const{
     //qDebug() << "....1....";
@@ -26,11 +24,6 @@ bool SortFilterProxyModel::recordStatus() const{
    // qDebug() << "....3....";
     return m_recordStatus;
 }
-void SortFilterProxyModel::handleRecordIndex(int rIndex){
-    //qDebug() << "....4....";
-    m_indexList.append(QString::number(rIndex));
-    qDebug() << "s::handleRecordIndex-m_indexList:" << m_indexList << this;
-}
 int SortFilterProxyModel::roleKey(const QByteArray &role) const{
    // qDebug() << "....5....";
     QHash<int,QByteArray> roles =roleNames();
@@ -46,16 +39,15 @@ int SortFilterProxyModel::roleKey(const QByteArray &role) const{
 
 TableViewModel *SortFilterProxyModel::source() const{
     //qDebug() << "....6....";
-    qDebug() << "sourceModel" << sourceModel();
+    //qDebug() << "sourceModel" << sourceModel();
     //return sourceModel();
     return m_tableViewModel;
 }
 QByteArray SortFilterProxyModel::sortRole() const{
-    //qDebug() << "....7....";
+    qDebug() << "....7...." << m_sortRole;
     return m_sortRole;
 }
 QByteArray SortFilterProxyModel::filterRole() const{
-    //qDebug() << "....8....";
     return m_filterRole;
 }
 QString SortFilterProxyModel::filterString() const{
@@ -70,7 +62,7 @@ SortFilterProxyModel::FilterSyntax SortFilterProxyModel::filterSyntax() const{
 void SortFilterProxyModel::setSource(TableViewModel *source){
     //qDebug() << "....11....";
     setSourceModel(qobject_cast<QAbstractItemModel *>(source));
-    qDebug() << qobject_cast<QAbstractItemModel *>(source);
+    //qDebug() << qobject_cast<QAbstractItemModel *>(source);
     if(source != nullptr && flag==1){
         qDebug() << "connecting...... ";
         connect(this, SIGNAL(recordIndexChanged(int,bool)), source, SLOT(handleRecordIndex(int,bool)));
@@ -102,8 +94,6 @@ void SortFilterProxyModel::setFilterRole(const QByteArray &role){
 }
 void SortFilterProxyModel::setFilterString(const QString &filter){
     qDebug() << "....15...." << filter;
-    //先判断是否过滤条件发生变化，如果发生变化，先发信号删除已经保存的索引，然后后续保存索引
-
     if(m_temp == filter){
         qDebug() << "......the value isn't changed...";
     }else{
