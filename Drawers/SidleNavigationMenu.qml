@@ -2,6 +2,10 @@
   @author: mettler toledo.
   @date: 2019.11.20
   @description: side navigations menu.
+   SidleNavigationMenu{
+        tempEdge: Qt.RightEdge
+        anchors.right: parent.right
+    }
 */
 
 import Style 1.0
