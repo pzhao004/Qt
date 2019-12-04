@@ -2,39 +2,35 @@
   @author: mettler toledo.
   @date: 2019.11.20
   @description: side navigations menu.
-    if you want use the SideNavigationRight,
-    example:
-    SideNavigationRight{
-        smooth: true
-        height: Layouts.viewHeight
-        width: Layouts.drawerNavigationRightWidth
-    }
 */
 
 import Style 1.0
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 
-Item {
+Rectangle {
     id:drawer
     x:closeX
-    property real flag: 0
+    property real flagT: 0
     property bool open:false
     property real velocity: 0
     property real oldMouseX: 0
     property Item rootItem: parent
     property int position: Qt.RightEdge
-    property int mousePosition: Layouts.viewWidth-Layouts.drawerNavigationRightWidth
+    property int edgeValue: Layouts.viewWidth-Layouts.drawerNavigationRightWidth
 
     readonly property bool rightEdge: position === Qt.RightEdge
-    readonly property int closeX: rightEdge ? rootItem.width : -drawer.width
-    readonly property int openX: rightEdge ? (rootItem.width- drawer.width):0
-    readonly property int maxnum_X: rightEdge ? rootItem.width: 0
-    readonly property int minnum_X: rightEdge ? (rootItem.width-drawer.width): -drawer.width
+    readonly property int closeX: rightEdge ? rootItem.width-Layouts.drawerNavigationRightWidth : -drawer.width+Layouts.drawerNavigationRightWidth
+    readonly property int openX: rightEdge ? rootItem.width-drawer.width  : 0
+    readonly property int mininum_X: rightEdge ? rootItem.width-drawer.width: -drawer.width
+    readonly property int maxnum_X: rightEdge ? rootItem.width-Layouts.drawerNavigationRightWidth: 0
+    readonly property int sideDuration: 200
+    readonly property int pullThreshold: drawer.width*0.5
 
     onOpenChanged:completeSlideDirection()
     onRightEdgeChanged: setupAnchors()
     function setupAnchors(){
+        console.log("enter set up...")
         rootItem = parent;
 
         optionIcon.anchors.right=undefined
@@ -44,57 +40,71 @@ Item {
         mouse.anchors.right=undefined
 
         if(rightEdge){
-            mouse.anchors.right=mouse.parent.right
+            //console.log("set up right .....")
+            mouse.anchors.right=drawer.left
             optionIcon.anchors.right=drawer.left
         }else{
+            //console.log("set up left ......")
             mouse.anchors.left=mouse.parent.left
             optionIcon.anchors.left=drawer.right
         }
         slideAnimation.enabled=false;
-        drawer.x= rightEdge? rootItem.width : -drawer.width
+        drawer.x= rightEdge? (rootItem.width-Layouts.drawerNavigationRightWidth) : -drawer.width
         slideAnimation.enabled=true;
+        //console.log("set up end function...")
     }
     function handleRelease(velocity,oldMouseX){
+        //console.log("flagT=",flagT,"velocity=",velocity,"oldMouseX=",oldMouseX)
         /*judge right slide drawer.*/
-        if(flag === 0){
-            if(velocity>oldMouseX || (velocity===mousePosition && oldMouseX===mousePosition)){
+        if(flagT === 0){
+            if(velocity>oldMouseX || (velocity===edgeValue && oldMouseX===edgeValue)){
+                //console.log("tag 0 open")
                 open=true
                 completeSlideDirection()
                 velocity=0
                 oldMouseX=0
             }else{
+                //console.log("tag 0 close")
                 open=false
                 completeSlideDirection()
                 velocity=0
                 oldMouseX=0
             }
+            flagT=1
         }else{
-            if(velocity<oldMouseX || (velocity===mousePosition && oldMouseX===mousePosition)){
+            if(velocity<oldMouseX || (velocity===edgeValue && oldMouseX===edgeValue)){
+                //console.log("tag 1 open")
                 open=true
                 completeSlideDirection()
                 velocity=0
                 oldMouseX=0
             }else{
+                //console.log("tag 1 close")
                 open=false
                 completeSlideDirection()
                 velocity=0
                 oldMouseX=0
             }
+            flagT=0
         }
 
     }
     function completeSlideDirection(){
+        //console.log("enter complete...")
         if(open){
+            //console.log("complete open")
             drawer.x=openX
         }else{
+            //console.log("complete close")
             drawer.x=closeX
             Qt.inputMethod.hide()
         }
     }
     function handleClick(mouse){
-        if(rightEdge && mouse.x>0 && mouse.x<optionIcon.width){
+        //console.log("mouse.x=", mouse.x, "flagT:", flagT)
+        if(rightEdge && flagT===1){
             open=true
-        } else if(rightEdge && (mouse.x<mousePosition-1)){
+        } else if(rightEdge && flagT===0){
             open=false
         }
     }
@@ -103,7 +113,7 @@ Item {
         id:slideAnimation
         enabled: !mouse.drag.active
         NumberAnimation{
-            duration: 200
+            duration: sideDuration
             easing.type: Easing.OutCubic
         }
     }
@@ -113,9 +123,8 @@ Item {
         target: drawer
         property: "x"
         running: false
-        /*to:closeX+(openMarginSize*(rightEdge? -1:1))*/
         to:closeX
-        duration: 200
+        duration: sideDuration
         easing.type: Easing.InOutQuad
     }
 
@@ -123,13 +132,13 @@ Item {
     MouseArea{
         id:mouse
         parent: rootItem
-        y:rootItem.y
-        width: open ? rootItem.width: optionIcon.width
-        height: rootItem.height
+        y:open? 0 : Layouts.viewHeight-height-Layouts.pageFooterHeight-Layouts.pageHeaderHgh
+        width: open ? Layouts.viewWidth:Layouts.drawerIconRightWidth
+        height: open ? Layouts.viewHeight: optionIcon.height
 
         drag.target: drawer
         drag.axis: Qt.Horizontal
-        drag.minimumX: minnum_X
+        drag.minimumX: mininum_X
         drag.maximumX: maxnum_X
         drag.onActiveChanged: if(active) {holdAnimation.stop()}
 
@@ -138,44 +147,47 @@ Item {
         onReleased: {handleRelease(velocity,oldMouseX)}
 
         onMouseXChanged: {
+            //console.log("mouse x changed...","mouse.x=",mouse.x, "oldMouseX=", oldMouseX)
             /*record the last x postion*/
-            if(flag===0){
+            if(flagT===0){
                 velocity = drawer.x;
-                flag=1;
+                console.log("velocity: ",velocity)
             }else{
                 oldMouseX=drawer.x;
-                flag=0;
+                console.log("oldMouseX: ",oldMouseX)
             }
         }
-        z: open ? 100:0
+        z: open ? 3:0
     }
     Connections{
         target: rootItem
         onWidthChanged:{
+            //console.log("width changed...")
             slideAnimation.enabled=false;
             completeSlideDirection();
             slideAnimation.enabled=true;
         }
     }
     Rectangle {
-           id: backgroundBlackout
-           parent: rootItem
-           anchors.fill: parent
-           //opacity: 0.5 * Math.min(1, Math.abs(drawer.x - closeX) / rootItem.width/2)
-           color: "#99ffffff"
-           //color: "black"
-       }
+        id: backgroundBlackout
+        parent: drawer
+        anchors.fill: parent
+        anchors.right: drawer.left
+        opacity: 0.9 * Math.min(1, Math.abs(drawer.x - closeX) / rootItem.width/2)
+        color: "whitesmoke"
+    }
     /*icon of side drawer navigation.*/
     Image{
         id: optionIcon
-        anchors.right: drawerId.left
-        source: Images.drawerHandleRightClosed
-        y:Layouts.viewHeight-optionIcon.height-Layouts.pageFooterHeight-Layouts.pageHeaderHgh
+        anchors.right: drawer.left
+        anchors.rightMargin: 0
+        width: Layouts.drawerIconRightWidth
+        source:open? Images.drawerHandleRightOpen:Images.drawerHandleRightClosed
+        y:Layouts.viewHeight-height-Layouts.pageFooterHeight-Layouts.pageHeaderHgh
     }
-
     Rectangle{
-        id:contextId
         anchors.fill: parent
         color: Colors.colorActionButtonText_re
     }
+
 }
